@@ -5,6 +5,7 @@ import com.example.demo.neo4j.domain.Movie;
 import com.example.demo.neo4j.domain.Role;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -49,7 +50,7 @@ public class ActorRepositoryTests {
         role2.setMovie(movie2);
         role2.setTitle("Han Solo");
 
-        Collection<Role> roles = new ArrayList<>();
+        List<Role> roles = new ArrayList<>();
         roles.add(role1);
         roles.add(role2);
         actor.setPlayedIn(roles);
@@ -63,7 +64,7 @@ public class ActorRepositoryTests {
         Actor retrievedActor = actorRepository.findOne(actor.getId());
         Assert.assertNotNull(retrievedActor);
         Assert.assertEquals(2, retrievedActor.getPlayedIn().size());
-        //FIXME: Assert failed :-(
+        //Test passed :-)
         LOGGER.debug("actor id {}", actor.getId());
         retrievedActor.getPlayedIn().stream().forEach(x -> LOGGER
                 .debug("{} played in '{}' as {}", x.getActor().getName(), x.getMovie().getTitle(), x.getTitle()));
