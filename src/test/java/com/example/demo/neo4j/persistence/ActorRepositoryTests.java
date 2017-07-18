@@ -67,6 +67,6 @@ public class ActorRepositoryTests {
         //Test passed :-)
         LOGGER.debug("actor id {}", actor.getId());
         retrievedActor.getPlayedIn().stream().forEach(x -> LOGGER
-                .debug("{} played in '{}' as {}", x.getActor().getName(), x.getMovie().getTitle(), x.getTitle()));
+                .debug("{} played in '{}' as '{}'", x.getActor().getName(), x.getMovie().getTitle(), x.getTitle()));
     }
 }

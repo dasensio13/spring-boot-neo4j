@@ -1,6 +1,6 @@
 package com.example.demo.neo4j.domain;
 
-import java.util.List;
+import java.util.Collection;
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
 
@@ -12,7 +12,7 @@ public class Actor {
 
     String name;
 
-    private List<Role> playedIn;
+    private Collection<Role> playedIn;
 
     public Long getId() {
         return id;
@@ -30,11 +30,11 @@ public class Actor {
         this.name = name;
     }
 
-    public List<Role> getPlayedIn() {
+    public Collection<Role> getPlayedIn() {
         return playedIn;
     }
 
-    public void setPlayedIn(List<Role> playedIn) {
+    public void setPlayedIn(Collection<Role> playedIn) {
         this.playedIn = playedIn;
     }
 }
